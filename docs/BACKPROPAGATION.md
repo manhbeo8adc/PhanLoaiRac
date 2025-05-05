@@ -8,6 +8,10 @@ Backpropagation là một thuật toán học máy được sử dụng để hu
 - **Gradient Descent**: Thuật toán sử dụng gradient descent để cập nhật các trọng số, giúp mô hình tiến gần hơn đến điểm tối ưu.
 - **Hiệu quả**: Backpropagation là một thuật toán hiệu quả, cho phép mô hình học từ dữ liệu lớn và phức tạp.
 
+## Mối liên hệ với hàm mất mát
+- **Hàm mất mát**: Backpropagation sử dụng hàm mất mát để đánh giá mức độ sai lệch giữa giá trị dự đoán và giá trị thực tế. Hàm mất mát cung cấp thông tin về hướng điều chỉnh các trọng số của mô hình.
+- **Tối ưu hóa**: Backpropagation tối ưu hóa hàm mất mát bằng cách điều chỉnh các trọng số của mô hình, giúp mô hình tiến gần hơn đến điểm tối ưu.
+
 ## Cách triển khai
 - **Tính toán lỗi**: Lỗi được tính toán dựa trên sự khác biệt giữa giá trị dự đoán và giá trị thực tế.
 - **Lan truyền ngược lỗi**: Lỗi được lan truyền ngược từ lớp đầu ra về các lớp trước đó, giúp mô hình học cách điều chỉnh các trọng số.
