@@ -1,22 +1,21 @@
 # Multi-Task Learning
 
 ## Tổng quan
-Multi-Task Learning (MTL) là một phương pháp học máy, trong đó một mô hình được huấn luyện để thực hiện nhiều nhiệm vụ cùng lúc. Thay vì huấn luyện các mô hình riêng biệt cho từng nhiệm vụ, MTL tận dụng thông tin từ các nhiệm vụ liên quan để cải thiện hiệu suất tổng thể.
+Multi-Task Learning (MTL) là một phương pháp học máy, trong đó một mô hình được huấn luyện để thực hiện nhiều nhiệm vụ khác nhau cùng một lúc. Mục đích là tận dụng các đặc trưng chung giữa các nhiệm vụ để cải thiện hiệu suất tổng thể của mô hình.
 
 ## Lợi ích
-- **Chia sẻ kiến thức**: Các nhiệm vụ liên quan có thể chia sẻ đặc trưng, giúp mô hình học hiệu quả hơn.
-- **Giảm overfitting**: Tận dụng dữ liệu từ nhiều nhiệm vụ giúp mô hình tránh được overfitting.
-- **Tăng hiệu suất**: Cải thiện độ chính xác cho các nhiệm vụ có ít dữ liệu huấn luyện.
+- **Tận dụng đặc trưng chung**: MTL giúp mô hình học được các đặc trưng chung giữa các nhiệm vụ, giúp tăng độ chính xác.
+- **Giảm overfitting**: Huấn luyện nhiều nhiệm vụ cùng lúc giúp giảm thiểu overfitting, tăng độ robust.
+- **Tiết kiệm tài nguyên**: Một mô hình có thể thực hiện nhiều nhiệm vụ, giúp tiết kiệm tài nguyên tính toán.
 
 ## Cách triển khai
-- **Kiến trúc mạng**: Sử dụng kiến trúc mạng có nhiều đầu ra (multi-head), mỗi đầu ra tương ứng với một nhiệm vụ.
-- **Loss function**: Kết hợp các loss function riêng cho từng nhiệm vụ, có thể cân bằng trọng số giữa các loss.
-- **Backbone chung**: Sử dụng một backbone chung (ví dụ: ResNet, EfficientNet) để trích xuất đặc trưng, sau đó chia nhánh cho từng nhiệm vụ.
+- **Chia sẻ các lớp chung**: Các lớp đầu tiên của mô hình được chia sẻ giữa các nhiệm vụ, giúp học các đặc trưng chung.
+- **Các lớp riêng biệt**: Các lớp cuối cùng của mô hình được tách riêng cho từng nhiệm vụ, giúp học các đặc trưng riêng.
+- **Hàm mất mát tổng hợp**: Hàm mất mát tổng hợp được tính bằng tổng có trọng số của các hàm mất mát của từng nhiệm vụ.
+- **Điều chỉnh trọng số**: Trọng số của các hàm mất mát có thể được điều chỉnh để cân bằng giữa các nhiệm vụ.
 
 ## Ví dụ
-Trong dự án Phân Loại Rác Thông Minh, MTL có thể được áp dụng để dự đoán đồng thời:
-- Nhãn phân loại rác (carton, thủy tinh, kim loại, ...).
-- Các thuộc tính vật liệu (metallic, smoothness, albedo, ...).
+Trong dự án Phân Loại Rác Thông Minh, MTL có thể được áp dụng để huấn luyện một mô hình thực hiện cả phân loại rác thải và phát hiện đối tượng rác thải. Các lớp đầu tiên của mô hình được chia sẻ để học các đặc trưng chung, trong khi các lớp cuối cùng được tách riêng cho từng nhiệm vụ.
 
 ## Tài liệu tham khảo
 - [Multi-Task Learning Using Uncertainty to Weigh Losses for Scene Geometry and Semantics](https://arxiv.org/abs/1705.07115)
