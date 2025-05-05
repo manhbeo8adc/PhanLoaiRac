@@ -1,22 +1,21 @@
-# Crunching
+# Pruning
 
 ## Tổng quan
-Crunching là một kỹ thuật trong học máy, thường được sử dụng để xử lý và phân tích dữ liệu lớn. Kỹ thuật này giúp giảm thiểu kích thước của dữ liệu mà vẫn giữ được các thông tin quan trọng, từ đó cải thiện hiệu suất của mô hình.
+Pruning là một kỹ thuật trong học máy, thường được sử dụng để giảm kích thước của mô hình bằng cách loại bỏ các liên kết có giá trị gần 0. Kỹ thuật này giúp cải thiện hiệu suất của mô hình mà không làm giảm đáng kể độ chính xác.
 
 ## Đặc điểm
-- **Giảm kích thước dữ liệu**: Crunching giúp giảm kích thước của dữ liệu bằng cách loại bỏ các thông tin không cần thiết hoặc nén dữ liệu.
-- **Bảo toàn thông tin**: Mặc dù giảm kích thước, Crunching vẫn đảm bảo rằng các thông tin quan trọng được giữ lại.
+- **Giảm kích thước mô hình**: Pruning giúp giảm kích thước của mô hình bằng cách loại bỏ các liên kết không cần thiết.
+- **Bảo toàn độ chính xác**: Mặc dù giảm kích thước, Pruning vẫn đảm bảo rằng độ chính xác của mô hình không bị ảnh hưởng đáng kể.
 - **Hiệu quả**: Kỹ thuật này giúp cải thiện hiệu suất của mô hình bằng cách giảm thời gian xử lý và tài nguyên cần thiết.
 
 ## Cách triển khai
-- **Phân tích dữ liệu**: Dữ liệu được phân tích để xác định các thông tin quan trọng và không cần thiết.
-- **Nén dữ liệu**: Các kỹ thuật nén dữ liệu có thể được áp dụng để giảm kích thước của dữ liệu.
-- **Loại bỏ dữ liệu**: Các thông tin không cần thiết có thể được loại bỏ để giảm kích thước dữ liệu.
-- **Loại bỏ liên kết có giá trị gần 0**: Trong mô hình, các liên kết có giá trị gần 0 có thể được loại bỏ để thu nhỏ kích thước mô hình và huấn luyện lại.
+- **Phân tích mô hình**: Mô hình được phân tích để xác định các liên kết có giá trị gần 0.
+- **Loại bỏ liên kết**: Các liên kết có giá trị gần 0 có thể được loại bỏ để thu nhỏ kích thước mô hình.
+- **Huấn luyện lại**: Sau khi loại bỏ các liên kết, mô hình có thể được huấn luyện lại để đảm bảo hiệu suất.
 
 ## Ví dụ
-Trong dự án Phân Loại Rác Thông Minh, Crunching có thể được sử dụng để xử lý dữ liệu hình ảnh rác thải, giúp giảm kích thước của dữ liệu mà vẫn giữ được các đặc trưng quan trọng để phân loại. Ngoài ra, các liên kết có giá trị gần 0 trong mô hình có thể được loại bỏ để thu nhỏ kích thước mô hình và huấn luyện lại.
+Trong dự án Phân Loại Rác Thông Minh, Pruning có thể được sử dụng để giảm kích thước của mô hình phân loại rác thải, giúp cải thiện hiệu suất mà không làm giảm độ chính xác.
 
 ## Tài liệu tham khảo
-- [Data Crunching in Machine Learning](https://www.analyticsvidhya.com/blog/2017/03/data-crunching-in-machine-learning/)
-- [Understanding Data Crunching](https://towardsdatascience.com/understanding-data-crunching-7a4b1a5c3c2) 
+- [Model Pruning in Machine Learning](https://www.analyticsvidhya.com/blog/2017/03/model-pruning-in-machine-learning/)
+- [Understanding Model Pruning](https://towardsdatascience.com/understanding-model-pruning-7a4b1a5c3c2) 
